@@ -7,4 +7,9 @@ body {
     padding: 0;
     height: 100vh;
     width: 100vw;
+    background-color: #8F755F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
 }
