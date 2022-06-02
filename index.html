@@ -6,17 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coldbrew Calculator</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <main class="main-container">
         <img class="main-image" src="/images/blake-wisz-X6aY_j6JD_Y-unsplash.jpg" alt="glass of cold brew coffee">
-        <div class="text-container">
+        <div id="start-text" class="start-text-container">
             <h1 class="start-card-title">Cold Brew Calculator</h1>
             <p class="start-card-description">Find out how much coffee and water you need for your perfect brew</p>
-            <button class="get-started button">get started</button>
+            <button id="get-started" class="get-started button">get started</button>
+        </div>
+        <div id="days-text" class="days-text-container">
+            <h2 class="days-card-title">How many <span>days</span> would you like to drink cold brew?</h2>
+            <button id="three-days" class="days button">Three</button>
+            <button id="four-days" class="days button">Four</button>
+            <button id="five-days" class="days button">Five</button>
+            <button id="next-from-days" class="next button">next</button>
+        </div>
+        <div id="cups-text" class="cups-text-container">
+            <h2 class="cups-card-title">What size glass do you prefer?</h2>
+            <button id="small-cup" class="cups button">Small</button>
+            <button id="large-cup" class="cups button">Large</button>
+            <button id="next-from-cups" class="next button">next</button>
+        </div>
+        <div id="result-text" class="result-text-container">
+            <p>You will need</p>
+            <p id="coffee-grounds-calc">1 1/2 cups</p>
+            <p>of coffee grounds and</p>
+            <p id="water-calc">6 cups</p>
+            <p>of water</p>
         </div>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
