@@ -41,10 +41,15 @@ body {
     font-size: 32px;
     font-family: 'Playfair Display', serif;
     font-weight: 700;
+    transition: color 250ms;
+}
+
+.button:hover {
+    color: #285421;
 }
 
 .start-text-container {
-    display: block;
+    display: none;
 }
 
 .start-card-title {
@@ -63,6 +68,11 @@ body {
     display: none;
 }
 
+.days-card-title {
+    padding: 0 30px;
+    margin-top: 10px;
+}
+
 .days {
     margin-bottom: 20px;
 }
@@ -71,10 +81,33 @@ body {
     display: none;
 }
 
+.cups-card-title {
+    padding: 0 30px;
+    margin-bottom: 50px;
+}
+
 .cups {
     margin-bottom: 30px;
 }
 
+#next-from-cups {
+    margin-top: 40px;
+}
+
 .result-text-container {
-    display: none;
+    display: block;
+}
+
+.result-constant-text {
+    font-size: 32px;
+    font-family: 'Roboto', sans-serif;
+    color: #DBCEC2;
+    padding: 0 30px;
+    margin: 20px auto;
+}
+
+.result-calc-text {
+    font-size: 32px;
+    font-weight: 900;
+    margin: 0 auto;
 }
