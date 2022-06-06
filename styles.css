@@ -49,7 +49,7 @@ body {
 }
 
 .start-text-container {
-    display: none;
+    display: block;
 }
 
 .start-card-title {
@@ -95,7 +95,7 @@ body {
 }
 
 .result-text-container {
-    display: block;
+    display: none;
 }
 
 .result-constant-text {
