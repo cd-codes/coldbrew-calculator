@@ -111,6 +111,7 @@ function handleNextFromDays() {
 function handleNextFromCups() {
     cupsCard.style.display = "none";
     resultCard.style.display = "block";
+    updateConcentrateResult();
 }
 
 function addHighlight(event) {
@@ -127,4 +128,12 @@ function addUnavailable(button) {
 
 function removeUnavailable(button) {
     button.classList.remove("unavailable");
+}
+
+function updateConcentrateResult() {
+    if(smallCupsButton.classList.contains("selected")) {
+        concentrateResult.innerText = "4 oz";
+    } else {
+        concentrateResult.innerText = "8 oz";
+    }
 }
