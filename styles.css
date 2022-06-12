@@ -115,3 +115,13 @@ body {
     font-weight: 900;
     margin: 0 auto;
 }
+
+.instructions-text-container {
+    display: none;
+}
+
+.instructions-items {
+    text-align: start;
+    padding-inline-start: 35px;
+    width: 275px;
+}
