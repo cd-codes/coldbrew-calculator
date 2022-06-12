@@ -22,6 +22,9 @@ const concentrateResult = document.getElementById('half-cup-size');
 
 const smallCupsOz = 8;
 const largeCupsOz = 16;
+let daysSelected = 3;
+let cupSizeSelected = 1;
+let totalWater = 0;
 
 startButton.addEventListener('click', () => {
     startCard.style.display = "none";
@@ -52,6 +55,7 @@ threeDaysButton.addEventListener('click', (e) => {
     removeHighlight(fourDaysButton);
     removeHighlight(fiveDaysButton);
     removeUnavailable(nextFromDaysButton);
+    daysSelected = 3;
     activateNextFromDays();
 })
 
@@ -60,6 +64,7 @@ fourDaysButton.addEventListener('click', (e) => {
     removeHighlight(threeDaysButton);
     removeHighlight(fiveDaysButton);
     removeUnavailable(nextFromDaysButton);
+    daysSelected = 4;
     activateNextFromDays();
 })
 
@@ -68,6 +73,7 @@ fiveDaysButton.addEventListener('click', (e) => {
     removeHighlight(threeDaysButton);
     removeHighlight(fourDaysButton);
     removeUnavailable(nextFromDaysButton);
+    daysSelected = 5;
     activateNextFromDays();
 })
 
@@ -75,6 +81,7 @@ smallCupsButton.addEventListener('click', (e) => {
     addHighlight(e);
     removeHighlight(largeCupsButton);
     removeUnavailable(nextFromCupsButton);
+    cupSizeSelected = 1;
     activateNextFromCups();
 })
 
@@ -82,6 +89,7 @@ largeCupsButton.addEventListener('click', (e) => {
     addHighlight(e);
     removeHighlight(smallCupsButton);
     removeUnavailable(nextFromCupsButton);
+    cupSizeSelected = 2;
     activateNextFromCups();
 })
 
@@ -111,6 +119,8 @@ function handleNextFromDays() {
 function handleNextFromCups() {
     cupsCard.style.display = "none";
     resultCard.style.display = "block";
+    updateWaterResult();
+    updateCoffeeResult();
     updateConcentrateResult();
 }
 
@@ -136,4 +146,14 @@ function updateConcentrateResult() {
     } else {
         concentrateResult.innerText = "8 oz";
     }
+}
+
+function updateWaterResult() {
+    totalWater = daysSelected * cupSizeSelected;
+    waterResult.innerText = `${totalWater} cups`;
+}
+
+function updateCoffeeResult() {
+    let totalCoffee = totalWater / 4;
+    coffeeResult.innerText = `${totalCoffee} cup${totalCoffee == 1 ? "" : "s"}`;
 }
