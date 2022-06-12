@@ -20,19 +20,12 @@ const coffeeResult = document.getElementById('coffee-calc');
 const waterResult = document.getElementById('water-calc');
 const concentrateResult = document.getElementById('half-cup-size');
 
+const smallCupsOz = 8;
+const largeCupsOz = 16;
+
 startButton.addEventListener('click', () => {
     startCard.style.display = "none";
     daysCard.style.display = "block";
-});
-
-nextFromDaysButton.addEventListener('click', () => {
-    daysCard.style.display = "none";
-    cupsCard.style.display = "block";
-});
-
-nextFromCupsButton.addEventListener('click', () => {
-    cupsCard.style.display = "none";
-    resultCard.style.display = "block";
 });
 
 nextFromResultButton.addEventListener('click', () => {
@@ -43,4 +36,95 @@ nextFromResultButton.addEventListener('click', () => {
 returnToStartButton.addEventListener('click', () => {
     instructionsCard.style.display = "none";
     startCard.style.display = "block";
+    removeHighlight(threeDaysButton);
+    removeHighlight(fourDaysButton);
+    removeHighlight(fiveDaysButton);
+    removeHighlight(smallCupsButton);
+    removeHighlight(largeCupsButton);
+    addUnavailable(nextFromDaysButton);
+    addUnavailable(nextFromCupsButton);
+    deactivateNextFromDays();
+    deactivateNextFromCups();
 })
+
+threeDaysButton.addEventListener('click', (e) => {
+    addHighlight(e);
+    removeHighlight(fourDaysButton);
+    removeHighlight(fiveDaysButton);
+    removeUnavailable(nextFromDaysButton);
+    activateNextFromDays();
+})
+
+fourDaysButton.addEventListener('click', (e) => {
+    addHighlight(e);
+    removeHighlight(threeDaysButton);
+    removeHighlight(fiveDaysButton);
+    removeUnavailable(nextFromDaysButton);
+    activateNextFromDays();
+})
+
+fiveDaysButton.addEventListener('click', (e) => {
+    addHighlight(e);
+    removeHighlight(threeDaysButton);
+    removeHighlight(fourDaysButton);
+    removeUnavailable(nextFromDaysButton);
+    activateNextFromDays();
+})
+
+smallCupsButton.addEventListener('click', (e) => {
+    addHighlight(e);
+    removeHighlight(largeCupsButton);
+    removeUnavailable(nextFromCupsButton);
+    activateNextFromCups();
+})
+
+largeCupsButton.addEventListener('click', (e) => {
+    addHighlight(e);
+    removeHighlight(smallCupsButton);
+    removeUnavailable(nextFromCupsButton);
+    activateNextFromCups();
+})
+
+
+
+function activateNextFromDays() {
+    nextFromDaysButton.addEventListener('click', handleNextFromDays);
+}
+
+function activateNextFromCups() {
+    nextFromCupsButton.addEventListener('click', handleNextFromCups);
+}
+
+function deactivateNextFromDays() {
+    nextFromDaysButton.removeEventListener('click', handleNextFromDays);
+}
+
+function deactivateNextFromCups() {
+    nextFromCupsButton.removeEventListener('click', handleNextFromCups);
+}
+
+function handleNextFromDays() {
+    daysCard.style.display = "none";
+    cupsCard.style.display = "block";
+}
+
+function handleNextFromCups() {
+    cupsCard.style.display = "none";
+    resultCard.style.display = "block";
+}
+
+function addHighlight(event) {
+    event.target.classList.add("selected");
+}
+
+function removeHighlight(button) {
+    button.classList.remove("selected");
+}
+
+function addUnavailable(button) {
+    button.classList.add("unavailable");
+}
+
+function removeUnavailable(button) {
+    button.classList.remove("unavailable");
+}
