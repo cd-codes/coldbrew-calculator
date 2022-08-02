@@ -25,6 +25,10 @@ body {
 }
 
 .main-image {
+    background-image: url("/images/blake-wisz-X6aY_j6JD_Y-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     width: 300px;
     height: 200px;
     border-top-left-radius: 30px;
@@ -132,4 +136,38 @@ body {
     width: 275px;
     font-family: 'Roboto', sans-serif;
     margin: 0 auto 50px;
+}
+
+@media screen and (min-width: 800px) {
+    .main-container {
+        width: 750px;
+        height: 500px;
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        grid-auto-flow: column;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .main-image {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 500px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        /* position: relative;
+        left: 450px; */
+        grid-column-start: 2;
+    }
+
+    .start-text-container, 
+    .days-text-container,
+    .cups-text-container,
+    .result-text-container,
+    .instructions-text-container {
+        width: 300px;
+    }
 }
