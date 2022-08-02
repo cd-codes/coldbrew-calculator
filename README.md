@@ -1,11 +1,13 @@
 # coldbrew-calculator
 
-This project is a cold brew calculator that will take in a user's preferences for how many days they would like to drink
+This project is a cold brew calculator that takes in a user's preferences for how many days they would like to drink
 a batch of cold brew and what glass size they prefer to calculate the ratio of coffee to water needed.
 
 ![cold-brew-calculator-desktop](https://user-images.githubusercontent.com/96320960/173247730-a3a26ce8-dc9b-4cb2-b4e9-2c0f392f4d9b.png)
 
 
-Since this project is in progress, the goal will be to use HTML, CSS and JavaScript to produce a calculator with a responsive layout.
+This project features a responsive layout designed first in **Figma**, using both **CSS Flexbox** and **CSS Grid** to position the elements in either a landscape orientation or a mobile-friendly vertical view.
 
-Photo credit to Blake Wisz on Unsplash
+**JavaScript** is used to change the visible card so that users can select options to input their preferences and see the calculated results.
+
+Photo credit: [Blake Wisz on Unsplash](https://unsplash.com/@blakewisz)
