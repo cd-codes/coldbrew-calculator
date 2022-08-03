@@ -25,7 +25,7 @@ body {
 }
 
 .main-image {
-    background-image: url("/images/blake-wisz-X6aY_j6JD_Y-unsplash.jpg");
+    background-image: url("./images/blake-wisz-X6aY_j6JD_Y-unsplash.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
